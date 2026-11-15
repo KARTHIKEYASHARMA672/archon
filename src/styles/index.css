@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-terracotta: #A84E3A;
+    --color-terracotta-hover: #833A2B;
+    --color-linen: #F8F4EE;
+    --color-alabaster: #FFFDF9;
+    --color-border: #E5DACB;
+    --color-graphite: #2B201C;
+    --color-muted: #6C5D54;
+    --color-brass: #C89B72;
+    --color-blueprint: #243B53;
+  }
+
+  body {
+    background-color: var(--color-linen);
+    color: var(--color-graphite);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Architectural Drafting Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F0E8DC;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #D4C4B2;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A84E3A;
+  }
+}
+
+/* Custom architectural drafting grid overlays */
+.vellum-grid-bg {
+  background-color: #F8F4EE;
+  background-image: 
+    radial-gradient(#6C5D54 0.75px, transparent 0.75px),
+    linear-gradient(to right, rgba(229, 218, 203, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(229, 218, 203, 0.4) 1px, transparent 1px);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
+}
+
+.blueprint-grid-bg {
+  background-color: #172A3E;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+}
+
+/* Subtle architectural edge bevel */
+.architectural-card {
+  background: #FFFDF9;
+  border: 1px solid #E5DACB;
+  box-shadow: 0 4px 16px -2px rgba(43, 32, 28, 0.05), 0 1px 3px 0 rgba(43, 32, 28, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.architectural-card:hover {
+  border-color: #D6C2AE;
+  box-shadow: 0 8px 24px -4px rgba(43, 32, 28, 0.08), 0 2px 6px -1px rgba(43, 32, 28, 0.04);
+}
+
+/* Tactile button styling */
+.btn-terracotta {
+  background-color: #A84E3A;
+  color: #FFFDF9;
+  font-weight: 600;
+  transition: all 0.15s ease-out;
+}
+
+.btn-terracotta:hover {
+  background-color: #833A2B;
+  transform: translateY(-1px);
+}
+
+.btn-terracotta:active {
+  transform: translateY(0);
+}
+
+/* Range input tactile styling */
+input[type=range] {
+  accent-color: #A84E3A;
+}
+
+/* Print styling for PDF / Client dossier export */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}
